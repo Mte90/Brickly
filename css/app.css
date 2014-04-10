@@ -1,0 +1,45 @@
+.title, .box-left, .box-right {
+	font-family: "Fira Sans","Fira Sans","Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+}
+.wrapper {
+	padding:20px;
+}
+.wrapper .title {
+	text-align: center;
+}
+.box-left {
+	float:left;
+}
+.box-right {
+	float:right;
+}
+label {
+	display: inline-block;
+	width: 140px;
+	font-size: 18px;
+}
+/* Fake Device code of Mozilla Brick */
+.mobile-view {
+	width:320px;
+	height:480px;
+	margin:0 auto;
+	border-color:#eee;
+	border-width: 40px 15px 60px;
+	border-radius: 20px;
+	border-style: solid;
+}
+.mobile-view:after {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: none repeat scroll 0% 0% #FFF;
+	border-radius: 20px;
+	right:180px;
+	bottom:-170px;
+}
+
+/* Fix */
+x-appbar header {
+	width:100%;
+}
