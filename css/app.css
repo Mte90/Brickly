@@ -2,10 +2,19 @@
 	font-family: "Fira Sans","Fira Sans","Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
 }
 .wrapper {
-	padding:20px;
+	padding:10px;
 }
 .wrapper .title {
 	text-align: center;
+	margin:0 auto;
+	margin-top: -5px;
+}
+.back, .next {
+	cursor:pointer;
+	font-size: 20px;
+}
+.content {
+	
 }
 .box-left {
 	float:left;
@@ -24,19 +33,9 @@ label {
 	height:480px;
 	margin:0 auto;
 	border-color:#eee;
-	border-width: 40px 15px 60px;
+	border-width: 40px 15px 40px;
 	border-radius: 20px;
 	border-style: solid;
-}
-.mobile-view:after {
-	content: "";
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	background: none repeat scroll 0% 0% #FFF;
-	border-radius: 20px;
-	right:180px;
-	bottom:-170px;
 }
 
 /* Fix */
