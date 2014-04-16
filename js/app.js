@@ -73,8 +73,17 @@ document.addEventListener("DOMContentLoaded", function() {
           document.querySelectorAll('.content'),
           function(el) {
             var new_child = document.createElement("li");
-            new_child.innerHTML = '<a href="#' + el.className.split(' ')[0] + '">' + el.dataset.title + '</a><br>';
+            new_child.innerHTML = '<a data-link="' + el.className.split(' ')[0] + '" href="#' + el.className.split(' ')[0] + '">' + el.dataset.title + '</a><br>';
             document.querySelector('#example-list').insertBefore(new_child, null);
+          }
+  );
+
+  [].forEach.call(
+          document.querySelectorAll('#example-list a'),
+          function(el) {
+            el.addEventListener('click', function() {
+              pages[el.dataset.link]();
+            });
           }
   );
 

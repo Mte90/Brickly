@@ -8,6 +8,7 @@
 	text-align: center;
 	margin:0 auto;
 	margin-top: -5px;
+	width:500px;
 }
 .back, .next {
 	cursor:pointer;
