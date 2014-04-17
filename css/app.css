@@ -1,4 +1,4 @@
-.title, .box-left, .box-right {
+.title, .box-left, .box-right, .popup, .home a {
 	font-family: "Fira Sans","Fira Sans","Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
 }
 .wrapper {
@@ -16,6 +16,21 @@
 }
 .content,.hide {
 	display:none;
+}
+.popup {
+	background: none repeat scroll 0 0 #000000;
+	border: 0 none;
+	border-radius: 5px;
+	color: #FFFFFF;
+	margin-bottom: 5px;
+	padding: 5px;
+	width: 100%;
+	cursor: pointer;
+	transition:background 0.5s, color 0.5s;
+}
+.popup:hover {
+	background: #fff;
+	color:#000;
 }
 .show {
 	display:block;

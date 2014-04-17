@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/brick-1.0.1.min.css">
+		<link rel="stylesheet" type="text/css" href="css/prism.css" />
 		<link rel="stylesheet" type="text/css" href="css/app.css">
 		<title>Brickly - Mozilla Brick Examples</title> 
 	</head> 
@@ -24,19 +25,23 @@
 			<div class="box-left">
 				<label for="header">Header Text:</label>
 				<input type="text" id="header"><br>
-				<pre><code id="header-code">
+				<pre><code id="header-code" class="language-javascript">
 appbar.heading
 </code></pre>
 				<label for="subheader">Subheader Text:</label>
 				<input type="text" id="subheader">
-				<pre><code id="subheader-code">
+				<pre><code id="subheader-code" class="language-javascript">
 appbar.subheading
 </code></pre>
+				<div>
+					<pre><code class="language-markup html-code">
+</code></pre>
+				</div>
 			</div>
 			<div class="box-right">
 				<div class="mobile-view">
 					<x-appbar>
-						<button id="view-next">Next</button>
+						<button id="view-next">Back</button>
 						<h1>Header</h1>
 						<button id="view-next">Next</button>
 					</x-appbar>
@@ -45,6 +50,8 @@ appbar.subheading
 		</div>
 		<script type="text/javascript" src="js/brick-1.0.1.min.js"></script>
 		<script type="text/javascript" src="js/native.history.js"></script>
+		<script type="text/javascript" src="js/prism.js"></script>
+		<script type="text/javascript" src="js/history.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 	</body>
 </html> 
