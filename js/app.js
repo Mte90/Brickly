@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
+  //AppBar Code
+  document.querySelector('#header').value = document.querySelector('x-appbar h1').innerHTML;
+  document.querySelector('#subheader').value = document.querySelector('x-appbar').getAttribute('subheading');
+  document.querySelector('#header').addEventListener('keyup', function() {
+    document.querySelector('x-appbar').heading = document.querySelector('#header').value;
+    document.querySelector('#header-code').textContent = "document.querySelector('x-appbar').heading = '" + document.querySelector('#header').value + "';";
+    Prism.highlightElement(document.querySelector('#header-code'));
+  });
+  document.querySelector('#subheader').addEventListener('keyup', function() {
+    document.querySelector('x-appbar').subheading = document.querySelector('#subheader').value;
+    document.querySelector('#subheader-code').textContent = "document.querySelector('x-appbar').subheading = '" + document.querySelector('#subheader').value + "';";
+    Prism.highlightElement(document.querySelector('#subheader-code'));
+  });
+
+  //Popup Code
   [].forEach.call(
           document.querySelectorAll('.content'),
           function(el) {
@@ -25,10 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
   //Update the code
   function update_code(el) {
     if (el.classList[0] !== 'home') {
-      document.querySelector('.' + el.classList[0] + ' .html-code').textContent = document.querySelector('.' + el.classList[0] + ' .mobile-view').innerHTML;
-      Prism.highlightAll();
+      document.querySelector('.' + el.classList[0] + ' #html-code').textContent = document.querySelector('.' + el.classList[0] + ' .mobile-view').innerHTML;
+      Prism.highlightElement(document.querySelector('.' + el.classList[0] + ' #html-code'));
     }
   }
-
-
 });
