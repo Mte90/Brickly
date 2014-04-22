@@ -48,8 +48,8 @@ label {
 }
 /* Fake Device code of Mozilla Brick */
 .mobile-view {
-	width:320px;
-	height:480px;
+	width:240px;
+	height:360px;
 	margin:0 auto;
 	border-color:#eee;
 	border-width: 40px 15px 40px;
@@ -60,4 +60,8 @@ label {
 /* Fix */
 x-appbar header {
 	width:100%;
+}
+
+.mobile-view > *:only-child:not(x-appbar):not(x-layout) {
+    margin-left:7px;
 }
