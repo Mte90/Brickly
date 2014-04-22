@@ -12,7 +12,59 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#subheader-code').textContent = "document.querySelector('x-appbar').subheading = '" + document.querySelector('#subheader').value + "';";
     Prism.highlightElement(document.querySelector('#subheader-code'));
   });
-
+  //Calendar Code
+  document.querySelector('#calendar-controls').addEventListener('change', function() {
+    if (document.querySelector('#calendar-controls').checked) {
+      document.querySelector('x-calendar').setAttribute('controls');
+      document.querySelector('#calendar-controls-code').textContent = "document.querySelector('x-calendar').setAttribute('controls');";
+    } else {
+      document.querySelector('x-calendar').removeAttribute('controls');
+      document.querySelector('#calendar-controls-code').textContent = "document.querySelector('x-calendar').removeAttribute('controls');";
+    }
+    Prism.highlightElement(document.querySelector('#calendar-controls-code'));
+  });
+  document.querySelector('#calendar-viewport').addEventListener('keyup', function() {
+    document.querySelector('x-calendar').setAttribute('view', document.querySelector('#calendar-viewport').value);
+    document.querySelector('#calendar-viewport-code').textContent = "document.querySelector('x-calendar').setAttribute('view', '" + document.querySelector('#calendar-viewport').value + "');";
+    Prism.highlightElement(document.querySelector('#calendar-viewport-code'));
+    update_code(document.querySelector('.xcalendar'));
+  });
+  document.querySelector('#calendar-chosen').addEventListener('keyup', function() {
+    document.querySelector('x-calendar').chosen = document.querySelector('#calendar-chosen').value;
+    document.querySelector('#calendar-chosen-code').textContent = "document.querySelector('x-calendar').chosen = '" + document.querySelector('#calendar-chosen').value + "';";
+    Prism.highlightElement(document.querySelector('#calendar-chosen-code'));
+    update_code(document.querySelector('.xcalendar'));
+  });
+  document.querySelector('#calendar-multiple').addEventListener('change', function() {
+    if (document.querySelector('#calendar-multiple').checked) {
+      document.querySelector('x-calendar').setAttribute('multiple');
+      document.querySelector('#calendar-multiple-code').textContent = "document.querySelector('x-calendar').setAttribute('multiple');";
+    } else {
+      document.querySelector('x-calendar').removeAttribute('multiple');
+      document.querySelector('#calendar-multiple-code').textContent = "document.querySelector('x-calendar').removeAttribute('multiple');";
+    }
+    Prism.highlightElement(document.querySelector('#calendar-multiple-code'));
+  });
+  document.querySelector('#calendar-notoggle').addEventListener('change', function() {
+    if (document.querySelector('#calendar-notoggle').checked) {
+      document.querySelector('x-calendar').setAttribute('notoggle');
+      document.querySelector('#calendar-notoggle-code').textContent = "document.querySelector('x-calendar').setAttribute('notoggle');";
+    } else {
+      document.querySelector('x-calendar').removeAttribute('notoggle');
+      document.querySelector('#calendar-notoggle-code').textContent = "document.querySelector('x-calendar').removeAttribute('notoggle');";
+    }
+    Prism.highlightElement(document.querySelector('#calendar-notoggle-code'));
+  });
+  document.querySelector('#calendar-span').addEventListener('keyup', function() {
+    document.querySelector('x-calendar').setAttribute('span', document.querySelector('#calendar-span').value);
+    document.querySelector('#calendar-span-code').textContent = "document.querySelector('x-calendar').setAttribute('span', '" + document.querySelector('#calendar-span').value + "');";
+    Prism.highlightElement(document.querySelector('#calendar-span-code'));
+  });
+  document.querySelector('#calendar-weekday').addEventListener('keyup', function() {
+    document.querySelector('x-calendar').setAttribute('first-weekday-num', document.querySelector('#calendar-weekday').value);
+    document.querySelector('#calendar-weekday-code').textContent = "document.querySelector('x-calendar').setAttribute('first-weekday-num', '" + document.querySelector('#calendar-weekday').value + "');";
+    Prism.highlightElement(document.querySelector('#calendar-weekday-code'));
+  });
   //Popup Code
   [].forEach.call(
           document.querySelectorAll('.content'),
@@ -26,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
               document.querySelector('.' + el.classList[0] + ' .mobile-view').parentNode.insertBefore(e, document.querySelector('.' + el.classList[0] + ' .mobile-view').parentNode.firstChild);
               //Create the popup
               e.addEventListener('click', function() {
-                var w = window.open('', "", "width=320, height=480, scrollbars=no");
+                var w = window.open('', "", "width=240, height=360, scrollbars=no");
                 w.document.body.innerHTML += '<link rel="stylesheet" type="text/css" href="http://' + window.location.hostname + window.location.pathname + '/css/brick-1.0.1.min.css">';
                 w.document.body.innerHTML += '<script type="text/javascript" src="http://' + window.location.hostname + window.location.pathname + '/js/brick-1.0.1.min.js"></script>';
                 w.document.body.innerHTML += document.querySelector('.' + el.classList[0] + ' .mobile-view').innerHTML;
@@ -40,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //Update the code
   function update_code(el) {
     if (el.classList[0] !== 'home') {
-      document.querySelector('.' + el.classList[0] + ' #html-code').textContent = document.querySelector('.' + el.classList[0] + ' .mobile-view').innerHTML;
+      document.querySelector('.' + el.classList[0] + ' #html-code').textContent = document.querySelector('.' + el.classList[0] + ' .mobile-view').innerHTML.replace(/>/gi, '>\n');
       Prism.highlightElement(document.querySelector('.' + el.classList[0] + ' #html-code'));
     }
   }

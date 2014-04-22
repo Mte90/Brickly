@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     'xappbar': function() {
       change_page('xappbar');
+    },
+    'xcalendar': function() {
+      change_page('xcalendar');
     }
   };
   //Check at page load if the page have a selector else load the home page
