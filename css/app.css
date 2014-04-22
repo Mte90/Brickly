@@ -61,6 +61,7 @@ label {
 	border-width: 40px 15px 40px;
 	border-radius: 20px;
 	border-style: solid;
+	overflow-y: scroll;
 }
 
 /* Fix */
