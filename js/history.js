@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     'xdeck': function() {
       change_page('xdeck');
+    },
+    'xflipbox': function() {
+      change_page('xflipbox');
     }
   };
   //Check at page load if the page have a selector else load the home page

@@ -97,6 +97,17 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('#deck-show-code').textContent = "document.querySelector('x-deck').showCard(" + document.querySelector('#deck-show-number').value + ");";
     Prism.highlightElement(document.querySelector('#deck-show-code'));
   });
+  //Flipbox Code
+  document.querySelector('#flipbox-flip').addEventListener('click', function() {
+    document.querySelector('x-flipbox').toggle();
+    document.querySelector('#flipbox-flip-code').textContent = "document.querySelector('x-flipbox').toggle();";
+    Prism.highlightElement(document.querySelector('#flipbox-flip-code'));
+  });
+  document.querySelector('#flipbox-direction').addEventListener('change', function() {
+    document.querySelector('x-flipbox').setAttribute('direction', document.querySelector('#flipbox-direction').value);
+    document.querySelector('#flipbox-direction-code').textContent = "document.querySelector('x-deck').setAttribute('" + document.querySelector('#flipbox-direction').value + "');";
+    Prism.highlightElement(document.querySelector('#flipbox-direction-code'));
+  });
   //Popup Code
   [].forEach.call(
           document.querySelectorAll('.content'),
