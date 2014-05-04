@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   document.querySelector('#flipbox-direction').addEventListener('change', function() {
     document.querySelector('x-flipbox').setAttribute('direction', document.querySelector('#flipbox-direction').value);
-    document.querySelector('#flipbox-direction-code').textContent = "document.querySelector('x-deck').setAttribute('" + document.querySelector('#flipbox-direction').value + "');";
+    document.querySelector('#flipbox-direction-code').textContent = "document.querySelector('x-flipbox').setAttribute('direction', '" + document.querySelector('#flipbox-direction').value + "');";
     Prism.highlightElement(document.querySelector('#flipbox-direction-code'));
   });
   //Popup Code
