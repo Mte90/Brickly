@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     'xflipbox': function() {
       change_page('xflipbox');
+    },
+    'finish': function() {
+      change_page('finish');
     }
   };
   //Check at page load if the page have a selector else load the home page
