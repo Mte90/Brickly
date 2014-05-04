@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     'xcalendar': function() {
       change_page('xcalendar');
+    },
+    'xdeck': function() {
+      change_page('xdeck');
     }
   };
   //Check at page load if the page have a selector else load the home page

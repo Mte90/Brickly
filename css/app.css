@@ -77,3 +77,10 @@ x-appbar header {
 .mobile-view > *:only-child:not(x-appbar):not(x-layout) {
     margin-left:7px;
 }
+
+x-card {
+	font-size: 8.5em;
+    padding-top: 50%;
+    text-align: center;
+	text-shadow: 1px 1px 4px #808080;
+}
