@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", function() {
     'home': function() {
       change_page(null);
     },
-    'xappbar': function() {
-      change_page('xappbar');
+    'brickappbar': function() {
+      change_page('brickappbar');
     },
-    'xcalendar': function() {
-      change_page('xcalendar');
+    'brickcalendar': function() {
+      change_page('brickcalendar');
     },
-    'xdeck': function() {
-      change_page('xdeck');
+    'brickdeck': function() {
+      change_page('brickdeck');
     },
-    'xflipbox': function() {
-      change_page('xflipbox');
+    'brickflipbox': function() {
+      change_page('brickflipbox');
     },
     'finish': function() {
       change_page('finish');
@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
     pages['home']();
   }
   //Add back and next action 
-  document.querySelector('.topbar .next').addEventListener('click', function() {
+  document.querySelector('.topbar .next_').addEventListener('click', function() {
     pages[document.querySelector('.show').nextElementSibling.className.split(' ')[0]]();
   });
-  document.querySelector('.topbar .back').addEventListener('click', function() {
+  document.querySelector('.topbar .back_').addEventListener('click', function() {
     pages[document.querySelector('.show').previousElementSibling.className.split(' ')[0]]();
   });
   //Change the page with paramenter the class of page
@@ -75,22 +75,22 @@ document.addEventListener("DOMContentLoaded", function() {
     //Check if have a title
     if (next.dataset.title) {
       //Show the next button
-      document.querySelector('.next').innerHTML = next.dataset.title;
-      document.querySelector('.next').classList.remove('hide');
+      document.querySelector('.next_').innerHTML = next.dataset.title;
+      document.querySelector('.next_').classList.remove('hide');
     } else {
       //Hide the button
-      document.querySelector('.next').classList.add('hide');
+      document.querySelector('.next_').classList.add('hide');
     }
     //Get the next page of the actual page
     var back = document.querySelector('.show').previousElementSibling;
     //Check if have a title
     if (back.dataset.title) {
       //Show the next button
-      document.querySelector('.back').innerHTML = back.dataset.title;
-      document.querySelector('.back').classList.remove('hide');
+      document.querySelector('.back_').innerHTML = back.dataset.title;
+      document.querySelector('.back_').classList.remove('hide');
     } else {
       //Hide the button
-      document.querySelector('.back').classList.add('hide');
+      document.querySelector('.back_').classList.add('hide');
     }
   }
   //Create the menu list

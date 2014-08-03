@@ -18,27 +18,12 @@ pre {
 	width:500px;
 	font-size:1.2em;
 }
-.back, .next {
+.back_, .next_ {
 	cursor:pointer;
 	font-size: 20px;
 }
 .content,.hide {
 	display:none;
-}
-.popup {
-	background: none repeat scroll 0 0 #000000;
-	border: 0 none;
-	border-radius: 5px;
-	color: #FFFFFF;
-	margin-bottom: 5px;
-	padding: 5px;
-	width: 100%;
-	cursor: pointer;
-	transition:background 0.5s, color 0.5s;
-}
-.popup:hover {
-	background: #fff;
-	color:#000;
 }
 .show {
 	display:block;
@@ -70,17 +55,18 @@ label {
 }
 
 /* Fix */
-x-appbar header {
-	width:100%;
-}
-
-.mobile-view > *:only-child:not(x-appbar):not(x-layout) {
+.mobile-view > *:only-child:not(brick-appbar):not(brick-layout) {
     margin-left:7px;
 }
 
-x-card {
+brick-card {
 	font-size: 8.5em;
     padding-top: 50%;
     text-align: center;
 	text-shadow: 1px 1px 4px #808080;
+}
+
+brick-flipbox {
+	height: 360px;
+	overflow: hidden;
 }

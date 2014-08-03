@@ -3,17 +3,20 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" type="text/css" href="css/brick-1.0.1.min.css">
+
 		<link rel="stylesheet" type="text/css" href="css/prism.css" />
+		<link rel="stylesheet" type="text/css" href="css/brick.css">
 		<link rel="stylesheet" type="text/css" href="css/app.css">
 		<title>Brickly - Mozilla Brick Examples</title> 
+		<script type="text/javascript" src="brick/platform/platform.js"></script>
+		<link rel="import" href="brick/brick.html">
 	</head> 
 	<body>
 		<div class="wrapper topbar">
-			<div class="box-left back hide">
+			<div class="box-left back_ hide">
 				Back
 			</div>
-			<div class="box-right next">
+			<div class="box-right next_">
 				Next
 			</div>
 			<h1 class="title">Home</h1>
@@ -30,18 +33,12 @@
 			<br>
 			Created by <a href="https://github.com/Mte90">Mte90</a><br>
 		</div>
-		<div class="xappbar wrapper content" data-title="Header Example with X-Appbar">
+		<div class="brickappbar wrapper content" data-title="Header Example with Brick-Appbar">
 			<div class="box-left">
 				<label for="header">Header Text:</label>
 				<input type="text" id="header"><br>
 				<pre>
 				<code id="header-code" class="language-javascript">
-				</code>
-				</pre>
-				<label for="subheader">Subheader Text:</label>
-				<input type="text" id="subheader">
-				<pre>
-				<code id="subheader-code" class="language-javascript">
 				</code>
 				</pre>
 				<div>
@@ -50,22 +47,22 @@
 				</code>
 					</pre>
 				</div>
-				Documentation: <a href="https://github.com/x-tag/appbar">https://github.com/x-tag/appbar</a>
+				Documentation: <a href="http://mozbrick.github.io/docs/brick-appbar.html">http://mozbrick.github.io/docs/brick-appbar.html</a>
 			</div>
 			<div class="box-right">
 				<div class="mobile-view">
-					<x-appbar subheading="(3)">
+					<brick-appbar heading="(3)">
 						<button id="view-back">Back</button>
 						<h1>Header</h1>
 						<button id="view-next">Next</button>
-					</x-appbar>
+					</brick-appbar>
 				</div>
 			</div>
 		</div>
-		<div class="xcalendar wrapper content" data-title="Calendar Example with X-Calendar">
+		<div class="brickcalendar wrapper content" data-title="Calendar Example with Brick-Calendar">
 			<div class="box-left">
 				<label for="calendar-controls">Add Controls:</label>
-				<input type="checkbox" id="calendar-controls"><br>
+				<input type="checkbox" id="calendar-controls" checked><br>
 				<pre>
 				<code id="calendar-controls-code" class="language-javascript">
 				</code>
@@ -83,7 +80,7 @@
 				</code>
 				</pre>
 				<label for="calendar-multiple">Add Multiple Selection:</label>
-				<input type="checkbox" id="calendar-multiple"><br>
+				<input type="checkbox" id="calendar-multiple" checked><br>
 				<pre>
 				<code id="calendar-multiple-code" class="language-javascript">
 				</code>
@@ -118,11 +115,11 @@
 			</div>
 			<div class="box-right">
 				<div class="mobile-view">
-					<x-calendar></x-calendar>
+					<brick-calendar controls multiple></brick-calendar>
 				</div>
 			</div>
 		</div>
-		<div class="xdeck wrapper content" data-title="Deck Examples with X-Deck">
+		<div class="brickdeck wrapper content" data-title="Deck Examples with Brick-Deck">
 			<div class="box-left">
 				<label for="deck-loop">Loop:</label>
 				<input type="checkbox" id="deck-loop" checked>
@@ -156,22 +153,21 @@
 				</code>
 					</pre>
 				</div>
-				Documentation: <a href="https://github.com/x-tag/deck">https://github.com/x-tag/deck</a><br>
-				More example: <a href="http://mozilla.github.io/brick/demos/x-tag-deck/index.html">http://mozilla.github.io/brick/demos/x-tag-deck/index.html</a>
+				Documentation: <a href="http://mozbrick.github.io/docs/brick-deck.html">http://mozbrick.github.io/docs/brick-deck.html</a><br>
 			</div>
 			<div class="box-right">
 				<div class="mobile-view">
-					<x-deck loop>
-						<x-card transition="show" transition-type="slide-down" transition-direction="reverse" show selected>0</x-card>
-						<x-card transition-type="slide-right" transition-direction="forward">1</x-card>
-						<x-card transition-type="fade-scale">2</x-card>
-						<x-card transition-type="slide-left">3</x-card>
-						<x-card transition-type="slide-up">4</x-card>
-					</x-deck>
+					<brick-deck loop>
+						<brick-card transition="show" transition-type="slide-down" transition-direction="reverse" show selected>0</brick-card>
+						<brick-card transition-type="slide-right" transition-direction="forward">1</brick-card>
+						<brick-card transition-type="fade-scale">2</brick-card>
+						<brick-card transition-type="slide-left">3</brick-card>
+						<brick-card transition-type="slide-up">4</brick-card>
+					</brick-deck>
 				</div>
 			</div>
 		</div>
-		<div class="xflipbox wrapper content" data-title="Flipbox Examples with X-Flipbox">
+		<div class="brickflipbox wrapper content" data-title="Flipbox Examples with Brick-Flipbox">
 			<div class="box-left">
 				<label for="flipbox-flip">Flip:</label>
 				<input type="button" id="flipbox-flip" value="Flip">
@@ -197,25 +193,22 @@
 				</code>
 					</pre>
 				</div>
-				Documentation: <a href="http://github.com/x-tag/flipbox">http://github.com/x-tag/flipbox</a><br>
-				More example: <a href="http://mozilla.github.io/brick/demos/x-tag-flipbox/index.html">http://mozilla.github.io/brick/demos/x-tag-flipbox/index.html</a>
+				Documentation: <a href="http://mozbrick.github.io/docs/brick-flipbox.html">http://mozbrick.github.io/docs/brick-flipbox.html</a><br>
 			</div>
 			<div class="box-right">
 				<div class="mobile-view">
-					<x-flipbox>
+					<brick-flipbox>
 						<div>Front face.</div>
 						<div>Back face.</div>
-					</x-flipbox>
+					</brick-flipbox>
 				</div>
 			</div>
 		</div>
 		<div class="finish wrapper content" data-title="Example Finished">
 			<div class="box-left">
 				More example on the official site <a href="http://mozilla.github.io/brick/docs.html">http://mozilla.github.io/brick/docs.html</a><br>
-				
 			</div>
 		</div>
-		<script type="text/javascript" src="js/brick-1.0.1.min.js"></script>
 		<script type="text/javascript" src="js/native.history.js"></script>
 		<script type="text/javascript" src="js/prism.js"></script>
 		<script type="text/javascript" src="js/history.js"></script>
